@@ -1,0 +1,906 @@
+/* natural box model */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+/* no break */
+.nobr {
+  white-space: nowrap;
+}
+
+html,
+body {
+  max-width: 100%;
+
+}
+
+/* START STYLES HERE */
+/* colors{
+
+HEX:
+
+#ffd61c
+} */
+body {
+  font-family: "Cutive Mono", monospace;
+  color: black;
+  height: auto;
+  margin-top: 2px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.home-caption {
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  max-width: 100%;
+}
+
+.home-caption img {
+  width: 100%;
+  max-width: 800px;
+  min-width: 300px;
+  height: auto;
+  display: block;
+  padding: 10px;
+}
+
+.home-caption p {
+  width: 50%;
+  text-align: right;
+}
+
+article {
+  width: 80%;
+  max-width: 80%;
+  margin: 60px auto;
+}
+
+
+.resume-article {
+  margin: 60px 160px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-items: center;
+  align-items: center;
+}
+
+
+
+header.scrolled {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+
+
+.logo-name {
+  font-size: 24px;
+  letter-spacing: 6px;
+}
+
+
+
+.signature {
+  width: 80px;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+nav a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.nav-about {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.menu-item a {
+  border: 1px solid transparent;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.menu-item a.active {
+  border-color: steelblue;
+  background-color: steelblue;
+  color: white;
+}
+
+
+
+
+/* HOVER.CSS */
+/* I made some minor changes of my own for styling but animation is from hover.css on github */
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #000000;
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+/* fonts */
+.cutive-mono-regular {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.contact-list {
+  list-style: none;
+  
+
+}
+
+.contact-list a {
+  font-size: 24px;
+  text-decoration: none;
+  color: #000;
+}
+
+.contact-list li {
+  margin-top: 26px;
+}
+
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+.contact-p {
+  font-size: 20px;
+  margin: 46px 0px;
+}
+
+.resume {
+  margin-top: 20px;
+  width: 60%;
+  height: auto;
+  border: solid 1px black;
+}
+
+.resume:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.resume-image {
+  width: 100%;
+}
+
+.about-nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+}
+
+.about-nav a {
+  border: 1px solid steelblue;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.about-nav a.active {
+  border-color: steelblue;
+  background-color: steelblue;
+  color: white;
+}
+
+.about-nav-links {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 20px;
+}
+
+
+.general-about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.general-text {
+  width: 40%;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+.general-text2 {
+  width: 82%;
+  font-size: 18px;
+  line-height: 1.5em;
+
+}
+
+.general-text3 {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.5em;
+
+}
+
+.general-img {
+  width: 40%;
+  text-align: left;
+}
+
+.general-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+
+
+.travel-about {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+.table-text {
+  width: 50%;
+}
+
+.table-img {
+  width: 100%;
+}
+
+.travel-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.travel-table td {
+  vertical-align: top;
+  padding: 30px 14px;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+.climbing-about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+
+}
+
+.climbing-img {
+  width: 60%;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.climbing-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.climbing-about2 {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 10px;
+
+}
+
+
+.climbing-about3 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.youtube {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.carousel-wrap {
+  max-width: 840px;
+  min-width: 320px;
+  max-height: 472.5px;
+  margin-bottom: 150px;
+
+}
+
+
+/* **************************************************** */
+/* leaflet styles */
+#map {
+  height: 550px;
+}
+
+.map {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  z-index: 1;
+}
+
+
+
+/* UTILITIES */
+/* hides an element on screen, but not from screen readers */
+.material-symbols-outlined {
+  font-size: 36px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+/* MODALS */
+.card-img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.modal-container {
+  margin-top: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  row-gap: 50px;
+
+}
+
+.modal-link {
+  border: 1px solid steelblue;
+  padding: 2px 2px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.modal-link:hover {
+  border: 1px solid steelblue;
+  padding: 2px 2px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: flex;
+  background-color: steelblue;
+  align-items: center;
+  font-size: 20px;
+}
+
+/* NAVIGATION */
+nav {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(128, 128, 128, 0.3);
+  /* sticky: fix menu to top of viewport, PUSHES content down */
+  position: sticky;
+  /* fixed: fixes menu to top of viewport, APPEARS OVER content */
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  /* Width will need to be set to 100% when setting position */
+  width: 100%;
+  z-index: 1000;
+}
+
+.branding {
+  position: absolute;
+  top: 16px;
+  left: 32px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  /* menu items aligned horiz and to the right */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li {
+  /* remove bullet points */
+  list-style-type: none;
+  padding: 1.5em;
+}
+
+
+
+
+.menu-button {
+  /* menu bars hidden to start */
+  display: none;
+  padding: 1.5rem;
+}
+
+.menu-button:hover {
+  /* menu bars need to act like a button */
+  cursor: pointer;
+}
+
+/* in mobile view... */
+@media (max-width: 1064px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .menu-button {
+    /* turn on */
+    display: block;
+    visibility: visible;
+  }
+
+  .menu-item {
+    /* turn off */
+    /* display: none; */
+
+    /* turn off in another way in order to add transition */
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+
+    /* some styling when in dropdown mode */
+    background-color: rgb(255, 255, 255);
+    text-align: right;
+    width: 100%;
+  }
+
+  article {
+    margin: 40px 40px;
+  }
+}
+
+.dropdown {
+  /* class to add to show hidden menu items on click */
+  display: block;
+  /* add transition */
+  position: static;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Media queries */
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+
+
+/* MEDIA QUERIES FROM SMALLEST TO LARGEST = MOBILE FIRST */
+/* Extra small devices (portrait phones, less than 576px)*/
+
+@media (max-width: 500px) {
+
+  /* extra small adjustments for phones */
+  .logo-name {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+
+  .signature {
+    width: 30px;
+
+  }
+
+  .branding {
+    position: absolute;
+    top: 24px;
+    left: 6px;
+
+  }
+
+  .line-thing {
+    display: none;
+  }
+
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .logo-name {
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+
+  .signature {
+    width: 40px;
+
+  }
+
+  .branding {
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    display: flex;
+    align-items: flex-end;
+
+  }
+
+  article {
+    margin: 0;
+    padding: 0 4px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .about-nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  .about-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 8px;
+  }
+
+  .about-nav a {
+    font-size: 13px;
+    padding: 4px 6px;
+    white-space: nowrap;
+  }
+
+
+
+  .general-about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .general-text,
+  .general-text2 {
+    font-size: 14px;
+    line-height: 1.3rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #map {
+    height: 150px;
+  }
+
+  .travel-about {
+    width: 100%;
+  }
+
+
+
+  .home-caption p {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (max-width: 768px) {
+  article {
+    margin: 10px 20px;
+
+  }
+
+  .general-about {
+    flex-flow: column wrap;
+    margin: 0px 0px;
+    gap: 10px;
+
+  }
+
+
+  .general-text,
+  .general-text2 {
+    font-size: 16px;
+    line-height: 1.3rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .general-img {
+    width: 100%;
+  }
+
+  .about-nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #map {
+    height: 250px;
+  }
+
+  .travel-table,
+  .travel-table tr,
+  .travel-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .travel-table td {
+    vertical-align: top;
+    padding: 0;
+  }
+
+  .travel-table tr {
+    margin-bottom: 1rem;
+  }
+
+  .table-img {
+    width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+  }
+
+  .table-text {
+    padding: 1rem 0;
+  }
+
+  .carousel-wrap {
+    margin-bottom: 50px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  .resume {
+    margin-top: 20px;
+    width: 90%;
+
+  }
+
+
+  .contact-list a,
+  .contact-p {
+    font-size: 18px;
+
+  }
+
+
+
+
+
+  .home-caption p {
+    width: 70%;
+    text-align: right;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+  article {
+    margin: 40px 40px;
+  }
+
+  .general-about {
+    flex-flow: column wrap;
+    gap: 20px;
+
+  }
+
+  .climbing-about,
+  .climbing-about2,
+  .climbing-about3 {
+    flex-flow: column wrap;
+    gap: 10px;
+  }
+
+  .climbing-img {
+    width: 100%;
+  }
+
+  .general-text,
+  .general-text2,
+  .general-img {
+    width: 100%;
+  }
+
+  .about-nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .about-nav a {
+    font-size: 20px;
+  }
+
+  #map {
+    height: 350px;
+  }
+
+  .travel-table td {
+    vertical-align: top;
+    padding: 15px 7px;
+  }
+
+
+
+  .home-caption p {
+    width: 60%;
+    text-align: right;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {}
+
+
+/* MEDIA QUERIES FROM LARGEST TO SMALLEST */
+/* Extra small devices (portrait phones, less than 576px) */
+/* @media (max-width: 575.98px) {
+
+} */
+
+/* Small devices (landscape phones, less than 768px) */
+/* @media (max-width: 767.98px) {
+
+} */
+
+/* Medium devices (tablets, less than 992px) */
+/* @media (max-width: 991.98px) {
+
+} */
+
+/* Large devices (desktops, less than 1200px) */
+/* @media (max-width: 1199.98px) {
+
+} */
+
+/* Extra large devices (large desktops)
+No media query since the extra-large breakpoint has no upper bound on its width */

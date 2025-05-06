@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel | BH</title>
+    <!-- resets browser defaults -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- leaflet cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- custom styles -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="branding">
+            <a href="index.html" class="hvr-grow"><img src="images/signature-copy.svg" alt="signature logo"
+                    class="signature"> <span class="line-thing">|</span> <span
+                    class="hvr-underline-from-center logo-name">BENJAMIN HENDERSON</span></a>
+        </div>
+        <ul>
+            <li class="menu-button">
+                <span class="open-menu" aria-label="Open main menu"><span
+                        class="material-symbols-outlined">menu</span><span class="sr-only">Open main menu</span></span>
+                <span class="close-menu" aria-label="Close main menu"><span
+                        class="material-symbols-outlined">close</span><span class="sr-only">Close main
+                        menu</span></span>
+            </li>
+            <li class="menu-item"><a href="about.html" class=" hvr-grow active">About</a></li>
+            <li class="menu-item"><a href="resume.html" class="hvr-underline-from-center hvr-grow">Resume</a></li>
+            <li class="menu-item"><a href="portfolio.html" class="hvr-underline-from-center hvr-grow">Portfolio</a></li>
+            <li class="menu-item"><a href="contact.html" class="hvr-underline-from-center hvr-grow">Contact</a></li>
+        </ul>
+    </nav>
+    <article>
+        <div class="about-nav">
+            <h1>Travels</h1>
+            <div class="about-nav-links">
+                <a href="about.html" class="hvr-grow">General</a>
+                <a href="climbing.html" class="hvr-grow">Climbing</a>
+                <a href="places.html" class="hvr-grow active">Travels</a>
+                <a href="gallery.html" class="hvr-grow">Gallery</a>
+            </div>
+        </div>
+        <hr>
+        <div class="general-text2">
+            <h2>The Places I've Been </h2>
+        </div>
+        <div class="map" id="map"></div>
+        <hr>
+        <div class="travel-about">
+            <div class="general-text3">
+                A lot of these places are ones I called home for a time. Whether I was climbing, camping, backpacking.
+                With friends, family, or alone, these places drew me to them and I would return to any one of them in a
+                heartbeat. But there are also so many more places that I have yet to see. Below are some notes on my
+                favorites.
+            </div>
+            <table class="travel-table">
+                <tr>
+                    <td class="table-text">
+                        <h4>Grand Teton National Park, WY</h4>
+                        I first fell in love with the Tetons in 2018, it was the first major destination on what became
+                        annual summer trips with my dad. I've since returned 4 times now and sport two tattoos of the
+                        entire outline of the range, split across both of my forearms.
+
+                    </td>
+                    <td>
+                        <img class="table-img" src="images/grand-tetons.jpg" alt="grand teton national park">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-text">
+                        <h4>Joshua Tree, CA</h4>
+                        First visiting here in the summer of 2023 with my dad, I was in awe with the other worldly
+                        aspect of the desert in addition to
+                        world class climbing. I returned here with two of my friends in the spring of 2024 and climbed
+                        Igneous Ambiance V7.
+
+                    </td>
+                    <td>
+                        <img class="table-img" src="images/joshua-tree.jpeg" alt="grand teton national park">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-text">
+                        <h4>Yosemite, CA</h4>
+                        My first time here was again in the summer of 2023 with my dad, and I instantly knew it was not
+                        enough. I plan to return here for the
+                        summer of 2025 as an employee in the valley where I will spend 3 months climbing, hiking, and
+                        soaking in one of the most beautiful places on
+                        Earth.
+                    </td>
+                    <td>
+                        <img class="table-img" src="images/yosemite-better.jpg" alt="grand teton national park">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </article>
+    <script src="js/nav.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // this dang map and markers took me so long I hope it is worth it, leaflet provided plugin
+        var map = L.map('map').setView([38, -100], 4);
+        // Grand Teton  
+        var marker = L.marker([43.790802, -110.684944]).addTo(map).bindPopup("Grand Teton National Park");
+        // Badlands  
+        var marker = L.marker([43.8554, -102.3397]).addTo(map).bindPopup("Badlands National Park");
+        // Theodore Roosevelt 
+        var marker = L.marker([46.967, -103.45]).addTo(map).bindPopup("Theodore Roosevelt National Park");
+        // Yosemite 
+        var marker = L.marker([37.865101, -119.53833]).addTo(map).bindPopup("Yosemite National Park");
+        // Joshua Tree 
+        var marker = L.marker([33.881866, -115.90065]).addTo(map).bindPopup("Joshua Tree National Park");
+        // Grand Canyon 
+        var marker = L.marker([36.3099, -112.7835]).addTo(map).bindPopup("Grand Canyon National Park");
+        // Indiana Dunes 
+        var marker = L.marker([41.633349, -87.053762]).addTo(map).bindPopup("Indiana Dunes National Park");
+        // Great Smoky Mountains 
+        var marker = L.marker([35.611763, -83.489548]).addTo(map).bindPopup("Great Smoky Mountains National Park");
+        // Glacier 
+        var marker = L.marker([48.7596, -113.787]).addTo(map).bindPopup("Glacier National Park");
+        // Yellowstone 
+        var marker = L.marker([44.423691, -110.588516]).addTo(map).bindPopup("Yellowstone National Park");
+        // Death Valley 
+        var marker = L.marker([36.5054, -117.0794]).addTo(map).bindPopup("Death Valley National Park");
+        // Rocky Mountain 
+        var marker = L.marker([40.343182, -105.688103]).addTo(map).bindPopup("Rocky Mountain National Park");
+        // Petroglyph NM
+        var marker = L.marker([35.139, -106.711]).addTo(map).bindPopup("Petroglyph National Monument");
+        // Mount Rushmore NM
+        var marker = L.marker([43.880318, -103.453873]).addTo(map).bindPopup("Mount Rushmore");
+        // Devils Tower NM
+        var marker = L.marker([44.590279, -104.715279]).addTo(map).bindPopup("Devils Tower National Monument");
+        // Pictured Rocks NL
+        var marker = L.marker([46.57110461297402, -86.31260602931839]).addTo(map).bindPopup("Pictured Rocks National Lakeshore");
+        // Little Bighorn Battlefield National Monument
+        var marker = L.marker([45.5647, -107.4297]).addTo(map).bindPopup("Little Bighorn Battlefield");
+        // Hoosier National Forest
+        var marker = L.marker([38.4786993511555, -86.52416860062127]).addTo(map).bindPopup("Hoosier National Forest");
+        // Wind River Range
+        var marker = L.marker([43.19097651264259, -109.61894157342468]).addTo(map).bindPopup("Wind River Range");
+        // Red Rocks, Nevada
+        var marker = L.marker([36.1358, -115.427]).addTo(map).bindPopup("Red Rocks, NV");
+        // Custer State Park, South Dakota
+        var marker = L.marker([43.73830481441791, -103.39596971599954]).addTo(map).bindPopup("Custer State Park");
+        // Red River Gorge, Kentucky
+        var marker = L.marker([37.7831771039313, -83.68260964246696]).addTo(map).bindPopup("Red River Gorge");
+        // Mad River Gorge, Ohio
+        var marker = L.marker([39.91312848985073, -83.85987410425838]).addTo(map).bindPopup("Mad River Gorge");
+        // Unlikely Wall, Indiana
+        var marker = L.marker([39.0233413445849, -86.53670946145976]).addTo(map).bindPopup("Unlikely Wall");
+        // Muscatatuck, Indiana
+        var marker = L.marker([38.98858540319138, -85.62240977634826]).addTo(map).bindPopup("Muscatatuck");
+        // Shades State Park, Indiana
+        var marker = L.marker([39.929571216692, -87.0721772251638]).addTo(map).bindPopup("Shades State Park");
+        // Turkey Run State Park, Indiana
+        var marker = L.marker([39.89100299027998, -87.20021966563948]).addTo(map).bindPopup("Turkey Run State Park");
+        // Holy Boulders, Illinois
+        var marker = L.marker([37.62503264386319, -89.40368921526907]).addTo(map).bindPopup("Holy Boulders");
+        // Giant City
+        var marker = L.marker([37.60647627556673, -89.18496332044228]).addTo(map).bindPopup("Giant City");
+        // Hoover Dam
+        var marker = L.marker([36.01869321630896, -114.73421666721735]).addTo(map).bindPopup("Hoover Dam");
+        // Other Misc
+        // New York City
+        var marker = L.marker([40.78063818788893, -73.97319622005385]).addTo(map).bindPopup("New York City");
+        // Pensacola
+        var marker = L.marker([30.408723139699458, -87.21861274814101]).addTo(map).bindPopup("Pensacola");
+        // Fort Myers
+        var marker = L.marker([26.646656785999163, -81.64044841265309]).addTo(map).bindPopup("Fort Myers");
+        // Chicago
+        var marker = L.marker([41.8772228957392, -87.63992838419655]).addTo(map).bindPopup("Chicago");
+        // South Haven 
+        var marker = L.marker([42.402903379409196, -86.28078991382863]).addTo(map).bindPopup("South Haven");
+        // Sedona
+        var marker = L.marker([34.86394415560515, -111.81070845560524]).addTo(map).bindPopup("Sedona");
+        // Southport
+        var marker = L.marker([39.66197057628621, -86.11676455527808]).addTo(map).bindPopup("Southport - born and raised");
+
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles © Esri'
+        }).addTo(map);
+    </script>
+    <!-- map provided by leaflet | -->
+    <!-- "Tiles © Esri — Source: Esri, Garmin, USGS, NGA, EPA, USDA, NPS" -->
+     <!-- Esri Tiles free for limited use webpages, ie personal portfolio per their use agreement here 
+      https://www.esri.com/en-us/legal/terms/full-master-agreement -->
+</body>
+
+</html>
