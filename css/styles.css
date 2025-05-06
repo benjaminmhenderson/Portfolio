@@ -202,6 +202,14 @@ nav a {
   right: 0;
 }
 
+.footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #666;
+  padding: 1rem 0;
+ 
+}
+
 /* fonts */
 .cutive-mono-regular {
   font-family: "Cutive Mono", monospace;
