@@ -74,6 +74,13 @@
           <p class="card-text"> Final Design Project was made in INFO-I 300</p>
         </div>
       </div>
+      <div class="card hvr-grow" style="width: 20rem;" data-bs-toggle="modal" data-bs-target="#caseStudy">
+        <img src="images/modal-serveit1.png" alt="Serve IT case study" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Serve IT Case Study</h5>
+          <p class="card-text"> Work in progress case study modal</p>
+        </div>
+      </div>
     </div>
     <!-- add work from i300 mobile app design,   -->
 
@@ -194,6 +201,70 @@
       </div>
     </div>
 
+    <!-- below consider placing carousel inside of modal to complete the desired slideshow for the requirments, could ask about just a lengthy page/report on the work -->
+    <div class="modal fade" id="caseStudy" tabindex="-1" aria-labelledby="caseStudyLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="caseStudyLabel">Case Study - Serve IT</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <h2>Serve IT Case Study Presentation</h2>
+            <div class="carousel-wrap">
+              <div id="gallery2" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#gallery2" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#gallery2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#gallery2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#gallery2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#gallery2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#gallery2" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/Serve-IT/Title.png" class="d-block w-100" alt="title page for presentation">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Serve-IT/Overview.png" class="d-block w-100" alt="overview of presentation">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Serve-IT/Team.png" class="d-block w-100" alt="accessibility team pictures">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Serve-IT/Goals.png" class="d-block w-100" alt="serve IT goals">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Serve-IT/Skills.png" class="d-block w-100" alt="skills learned from serve it">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Serve-IT/BSO.png" class="d-block w-100" alt="bloomington symphony orchestra">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#gallery2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#gallery2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+
+
+            <a href="https://serveit.luddy.indiana.edu/index.html" target="_blank" class="modal-link">Serve IT
+              Homepage</a>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </article>
 
   <footer class="footer">
@@ -204,7 +275,7 @@
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
     crossorigin="anonymous"></script>
 
-    <!-- modal from boostrap -->
+  <!-- modal from boostrap -->
 </body>
 
 </html>
