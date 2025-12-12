@@ -431,10 +431,26 @@ h4 {
 .carousel-wrap {
   max-width: 840px;
   min-width: 320px;
+  width: 100%;
   max-height: 472.5px;
   margin-bottom: 150px;
 
 }
+
+.panorama-carousel .carousel-inner {
+    max-height: 500px;       
+    overflow: hidden;
+}
+
+
+.panorama-carousel .carousel-inner img {
+    width: 100%;
+    height: auto;             
+    max-height: 500px;
+    object-fit: contain;      
+    background-color: #d1d1d1;   
+}
+
 
 
 /* **************************************************** */
